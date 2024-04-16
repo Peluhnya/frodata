@@ -30,7 +30,8 @@ module FrOData
       # Return the full request URL (including service base)
       # @return [String]
       def url
-        connection.build_url(url_chunk, params).to_s
+        url = connection.build_url(url_chunk, params).to_s
+        URI.encode('url')
       end
 
       # The content type for this request. Depends on format.
