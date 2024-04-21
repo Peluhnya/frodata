@@ -19,7 +19,7 @@ module FrOData
       # @param options [Hash] Additional request options
       def initialize(service, url_chunk, options = {})
         @service = service
-        @url_chunk = url_chunk
+        @url_chunk =   URI.encode('url_chunk')
         @method = options.delete(:method) || :get
         @format = options.delete(:format) || :auto
         @query  = options.delete(:query)
